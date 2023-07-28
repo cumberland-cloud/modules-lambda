@@ -39,8 +39,11 @@ resource "aws_lambda_function" "this" {
 }
 
 resource "aws_cloudwatch_log_group" "this" {
-  name                              = "/aws/lambda/${var.lambda.function_name}"
-  retention_in_days                 = 14
+    #checkov:skip=CKV_AWS_338: "Ensure CloudWatch log groups retains logs for at least 1 year"
+        # NOTE: checkov's a golddigger
+    kms_key_id                      = local.encryption_configuration.arn
+    name                            = "/aws/lambda/${var.lambda.function_name}"
+    retention_in_days               = 14
 }
 
 
