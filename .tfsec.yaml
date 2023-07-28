@@ -1,3 +1,4 @@
 ---
 exclude:
-  # - 
+  # tf-sec is picking up a * in the arn partition, not the resource.
+  - aws-iam-no-policy-wildcards 
