@@ -12,14 +12,6 @@ locals {
                                     ) : (
                                         var.bucket.key
                                     )
-    environment_configuration       = length(var.lambda.environment_variables) > 0 ? (
-                                        toset(["placeholder"])
-                                    ) : ( 
-                                        toset([])
-                                    )
-    vpc_configuration               = length(var.lambda.vpc_config) > 0 ? (
-                                        toset(["placeholder"])
-                                    ) : ( 
-                                        toset([])
-                                    )
+    environment_configuration       = try(var.lambda.environment_variables, {})
+    vpc_configuration               = try(var.lambda.vpc_config, {})
 }

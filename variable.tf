@@ -10,7 +10,7 @@ variable "lambda" {
         execution_role                  = any
         function_name                   = string
         image_url                       = string
-        environment_variables           = optional(map(any), {})
+        environment_variables           = optional(map(any), null)
         key                             = optional(string, null)
         memory                          = optional(number, 512)
         timeout                         = optional(number, 120)
