@@ -1,5 +1,5 @@
-Welcome to cumberland-cloud/src's documentation!
-================================================
+Welcome to cumberland-cloud/modules/lambda's documentation!
+===========================================================
 
 .. toctree::
    :maxdepth: 2
