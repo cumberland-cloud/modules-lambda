@@ -1,9 +1,5 @@
-# Terraform Modules: KMS
+# Terraform Modules: Lambda
 
-A Terraform module for deploying a KMS key and policy.
+A Terraform module for deploying a containerized **Lambda** function.
 
-Refer to [hosted docs]() for more information regarding this module.
-
-<!-- BEGIN_TF_DOCS -->
-Terraform Docs Placeholder
-<!-- END_TF_DOCS -->  
+Refer to [hosted docs](https://cumberland-cloud.github.io/modules-lambda/) for more information regarding this module.

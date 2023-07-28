@@ -67,15 +67,15 @@ html_theme_options = {
 
     # Specify a base_url used to generate sitemap.xml. If not
     # specified, then no sitemap will be built.
-    'base_url': 'TODO',
+    'base_url': 'https://cumberland-cloud.github.io/modules-lambda/',
 
     # Set the color and the accent color
     'color_primary': 'blue',
     'color_accent': 'light-blue',
 
     # Set the repo location to get a badge with stats
-    'repo_url': 'TODO',
-    'repo_name': 'TODO',
+    'repo_url': 'https://github.com/cumberland-cloud/modules-lambda',
+    'repo_name': 'modules-lambda',
 
     # Visible levels of the global TOC; -1 means unlimited
     'globaltoc_depth': 2,
