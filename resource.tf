@@ -56,7 +56,7 @@ resource "aws_sns_topic" "this" {
 resource "aws_iam_policy" "this" {
   name                              = "${var.lambda.function_name}-sns-dlq-policy"
   description                       = "Allows publishing to the SNS Topic '${local.event_notification_id}'"
-  policy                            = data.aws_iam_policy_document.policy.json
+  policy                            = data.aws_iam_policy_document.notification_identity_policy.json
 }
 
 resource "aws_iam_role_policy_attachment" "this" {
