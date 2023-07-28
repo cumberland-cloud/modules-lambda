@@ -10,7 +10,7 @@ locals {
     encryption_configuration        = local.conditions.provision_key ? (
                                         module.kms[0].key 
                                     ) : (
-                                        var.bucket.key
+                                        var.lambda.key
                                     )
     environment_configuration       = try(var.lambda.environment_variables, {})
     vpc_configuration               = try(var.lambda.vpc_config, {})
