@@ -31,7 +31,7 @@ data "aws_iam_policy_document" "notification_identity_policy" {
         condition {
             test                = "ArnLike"
             variable            = "aws:SourceArn"
-            values              = aws_lambda_function.this.arn
+            values              = [ aws_lambda_function.this.arn ]
         }
 
         principals {
