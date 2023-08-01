@@ -19,5 +19,5 @@ locals {
                                         var.lambda.key
                                     )
     environment_configuration       = try(var.lambda.environment_variables, {})
-    vpc_configuration               = try(var.lambda.vpc_config, {})
+    vpc_configuration               = var.lambda.vpc_config == null ? {} : var.lambda.vpc_config
 }

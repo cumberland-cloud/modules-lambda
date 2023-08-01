@@ -23,7 +23,7 @@ variable "lambda" {
         vpc_config                      = optional(object({
             security_group_ids          = list(string)
             subnet_ids                  = list(string)
-        }), {})
+        }), null)
     })
 }
 
