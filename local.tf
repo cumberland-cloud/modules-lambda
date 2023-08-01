@@ -1,6 +1,6 @@
 locals {
     # Constants
-    event_notification_id           = "${local.function_name-format_short}-notifications"
+    event_notification_id           = "${local.function_name_format_short}-notifications"
     event_notification_arn          = "arn:aws:sns:*:*:${local.event_notification_id}"
         # note: construct lambda arn before to prevent dependency cycles, i.e.
             # notification_policy(lambda) -> lambda(sns) -> sns(notification_policy)
