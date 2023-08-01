@@ -1,3 +1,7 @@
+data "aws_caller_identity" "current" {}
+
+data "aws_region" "current" {}
+
 data "aws_iam_policy_document" "notification_resource_policy" {
   statement {
         sid                     = "LambdaServicePerms"
@@ -8,7 +12,7 @@ data "aws_iam_policy_document" "notification_resource_policy" {
         condition {
             test                = "ArnLike"
             variable            = "aws:SourceArn"
-            values              = aws_lambda_function.this.arn
+            values              = [ local.lambda_arn ]
         }
 
         principals {
