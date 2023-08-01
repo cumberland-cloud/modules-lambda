@@ -22,3 +22,9 @@ variable "lambda" {
         }), null)
     })
 }
+
+variable "namespace" {
+    type                                = string
+    description                         = "Root namespace of resources"
+    default                             = "cumberland-cloud"
+}
