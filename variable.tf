@@ -27,7 +27,7 @@ variable "lambda" {
     })
 
      validation {
-        condition               = alltrue(
+        condition               = !anytrue(
             [ for invalid in [ "/", ".", "\\", ";", ",", "(", ")" ]: 
                 strcontains(var.lambda.function_name, invalid) ]
         ) 
