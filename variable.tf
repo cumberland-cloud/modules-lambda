@@ -11,7 +11,11 @@ variable "lambda" {
         function_name                   = string
         image_url                       = string
         environment_variables           = optional(map(any), null)
-        key                             = optional(string, null)
+        key                             = optional(object({
+            id                          = string
+            arn                         = string
+            alias_arn                   = string
+        }), null)
         memory                          = optional(number, 512)
         timeout                         = optional(number, 120)
         tracing_config_mode             = optional(string, "Active")
