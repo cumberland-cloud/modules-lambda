@@ -3,6 +3,6 @@ module "kms" {
     source          = "git::https://github.com/cumberland-cloud/modules-kms.git?ref=v1.0.0"
 
     key             = {
-        alias       = "${local.formatted_function_name}-s3"
+        alias       = "${local.function_name_format_short}-s3"
     }
 }
