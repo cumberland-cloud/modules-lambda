@@ -2,7 +2,7 @@ resource "aws_lambda_function" "this" {
     #checkov:skip=CKV_AWS_272: "Ensure AWS Lambda function is configured to validate code-signing"
         # TODO: sign ECR images
 
-    function_name                   = local.function_name_validated
+    function_name                   = var.lambda.function_name
     image_uri                       = var.lambda.image_url
     kms_key_arn                     = local.encryption_configuration.arn
     memory_size                     = var.lambda.memory

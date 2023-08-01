@@ -25,6 +25,16 @@ variable "lambda" {
             subnet_ids                  = list(string)
         }), null)
     })
+
+     validation {
+        condition               = alltrue(
+            [ for invalid in [ "/", ".", "\\", ";", ",", "(", ")" ]: 
+                strcontains(var.lambda.function_name, invalid) ]
+        ) 
+        # TODO: this would probably be easier with a regex expression...
+        #       ...more foolproof too. Need to learn regex first...
+        error_message           = "Function name can only contain [A-Z][a-z][0-9][_][-]."
+    }
 }
 
 variable "namespace" {
