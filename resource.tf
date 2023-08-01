@@ -8,7 +8,7 @@ resource "aws_lambda_function" "this" {
     memory_size                     = var.lambda.memory
     package_type                    = "Image"
     publish                         = true
-    role_arn                        = var.lambda.execution_role.arn
+    role                            = var.lambda.execution_role.arn
     timeout                         = var.lambda.timeout
     reserved_concurrent_executions  = var.lambda.reserved_concurrent_executions
     
